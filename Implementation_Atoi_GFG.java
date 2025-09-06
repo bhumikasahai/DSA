@@ -1,4 +1,4 @@
-class Solution {
+/*class Solution {
     public int myAtoi(String s) {
         // code here
         int sign=1;
@@ -24,4 +24,4 @@ class Solution {
         }
         return res * sign;
     }
-}
+}*/
