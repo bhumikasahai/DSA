@@ -1,3 +1,4 @@
+import java.util.Arrays;
 class Solution {
     int dp[][][];
     public int findNumberOfLIS(int[] nums) {
