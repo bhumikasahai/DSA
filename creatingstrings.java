@@ -12,6 +12,7 @@ public class creatingstrings {
         for(String str : result){
             System.out.println(str);
         }
+        sc.close();
     }
     public static void solve(char[] arr, int idx) {
         if(idx == arr.length){

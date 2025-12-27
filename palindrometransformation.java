@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class PalindromeTransformation {
+public class palindrometransformation {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

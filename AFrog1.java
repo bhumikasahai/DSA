@@ -10,6 +10,7 @@ class AFrog1{
         int dp[] = new int[n];
         Arrays.fill(dp,-1);  
         System.out.println(solve(0,n,arr,dp));   
+        sc.close();
     }
     public static int solve( int i, int n,int arr[], int dp[]){
         if(i==n-1) return 0;
