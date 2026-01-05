@@ -1,28 +1,6 @@
-# DSA Practice Repository
+# DSA
 
 This repository contains my solutions to a wide range of Data Structures & Algorithms problems — covering platforms like LeetCode, CSES, AtCoder, Codeforces, and more.
-
-It includes questions across topics such as:
-
-🧠 Dynamic Programming
-
-🔁 Recursion
-
-🔙 Backtracking
-
-🔗 Linked Lists
-
-🌳 Trees & Binary Trees
-
-🧩 Graphs
-
-🧮 Arrays & Strings
-
-⚙️ Greedy
-
-🏗️ Stack / Queue / Heap
-
-…and many more!
 
 🧭 Goal of This Repository
 
