@@ -6,5 +6,6 @@ public class name {
         for(int i=0;i<n;i += n/2){
             System.out.println("Bhumika");
         }
+        sc.close();
     }
 }
