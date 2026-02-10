@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class LabyrinthPathPair {
+public class Labyrinth {
     static class Pair {
         int r, c;
         public Pair(int r, int c) {
