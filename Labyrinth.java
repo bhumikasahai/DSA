@@ -17,7 +17,7 @@ public class Labyrinth {
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
         char[][] grid = new char[n][m];
-        char[][] pathTracker = new char[n][m]; 
+        char[][] parent = new char[n][m]; 
         boolean[][] visited = new boolean[n][m];
         Pair start = null;
         Pair end = null;
@@ -49,7 +49,7 @@ public class Labyrinth {
                 if (nr >= 0 && nr < n && nc >= 0 && nc < m 
                     && grid[nr][nc] != '#' && !visited[nr][nc]) {
                     visited[nr][nc] = true;
-                    pathTracker[nr][nc] = dirChar[k]; 
+                    parent[nr][nc] = dirChar[k]; 
                     q.add(new Pair(nr, nc)); 
                 }
             }
@@ -59,7 +59,7 @@ public class Labyrinth {
             StringBuilder path = new StringBuilder();
             Pair curr = end; 
             while (curr.r != start.r || curr.c != start.c) {
-                char move = pathTracker[curr.r][curr.c];
+                char move = parent[curr.r][curr.c];
                 path.append(move);
                 if (move == 'U') curr.r++;       
                 else if (move == 'D') curr.r--;  
