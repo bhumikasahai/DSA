@@ -6,7 +6,6 @@ public class investigation {
     static class Pair {
         long d; 
         int n;
-        int min;
         Pair(long d, int n) {
             this.d = d;
             this.n = n;
@@ -26,20 +25,42 @@ public class investigation {
             adj.get(u).add(new Pair(w, v)); 
         }
     }
-    public int solve(ArrayList<ArrayList<Pair>> adj, int V){
+    public void solve(ArrayList<ArrayList<Pair>> adj, int V){
+        long MOD = 1_000_000_007;
         long dist[] = new long[V+1];
-        Arrays.fill(dist,Integer.MAX_VALUE);
+        long ways[] = new long[V+1];
+        int minedge[] = new int[V+1];
+        int maxedge[] = new int[V+1];
+        Arrays.fill(dist, Long.MAX_VALUE);
+        Arrays.fill(minedge, Integer.MAX_VALUE);
         dist[1] = 0;
+        ways[1] = 1;
+        minedge[1] = 0;
+        maxedge[1] = 0;
         PriorityQueue<Pair> pq = new PriorityQueue<>((a,b)->Long.compare(a.d,b.d));
         pq.offer(new Pair(0,1));
         while(!pq.isEmpty()){
             Pair curr = pq.poll();
             int currn = curr.n;
             long currd = curr.d;
-            if(currd>dist[currn]) continue;
-            for(Pair it : )
+            if(currd > dist[currn]) continue;
+            for(Pair it : adj.get(currn)){
+                int i = it.n;
+                long w = it.d;
+                if(dist[currn] + w < dist[i]){
+                    dist[i] = currd+w;
+                    ways[i] = ways[currn];
+                    minedge[i] = minedge[currn]+1;
+                    maxedge[i] = maxedge[currn]+1;
+                    pq.offer(new Pair(dist[i],i));
+                }else if(dist[currn]+w==dist[i]){
+                    ways[i] = (ways[i]+ways[currn])%MOD;
+                    minedge[i] = Math.min(minedge[i],minedge[currn]+1);
+                    maxedge[i] = Math.max(maxedge[i],maxedge[currn]+1);
+                }
+            }
         }
-
+        System.out.println(dist[V] + " " + ways[V] + " " + minedge[V] + " " + maxedge[V]);
     }
     public static void main(String args[]) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -54,5 +75,7 @@ public class investigation {
             int w = Integer.parseInt(st.nextToken());
             g.addEdge(u, v, w);
         }
+        investigation solver = new investigation();
+        solver.solve(g.adj, V);
     }
 }
