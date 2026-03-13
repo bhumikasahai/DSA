@@ -1,5 +1,5 @@
 import java.util.*;
-public class hitthelottery{
+public class hitthelotterydp{
     static int dp[][];
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
