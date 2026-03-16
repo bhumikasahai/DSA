@@ -21,6 +21,7 @@ public class companyqueries {
                 }
             }
         }
+        System.out.println(Arrays.deepToString(up));
         while (q-- > 0) {
             int node = sc.nextInt();
             int k = sc.nextInt();
