@@ -30,6 +30,14 @@ public class rangeupdate{
         }
     }
     public static int query(int idx, int ql, int qr, int l, int r){
-        if(lazy)
+        if(lazy[idx]!=0){
+            seg[idx] = (r-l+1)*v;
+            if(l!=r){
+                lazy[2*idx+1] += v;
+                lazy[2*idx+2] += v;
+            }
+            lazy[idx] = 0;
+            
+        }
     }
 }
