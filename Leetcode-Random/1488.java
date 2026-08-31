@@ -1,5 +1,5 @@
+import java.util.*;
 class Solution {
-
     public int[] avoidFlood(int[] rains) {
         int[] ans = new int[rains.length];
         Arrays.fill(ans, 1);
