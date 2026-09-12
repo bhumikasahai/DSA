@@ -26,5 +26,6 @@ public class binarysearch {
         if(found==false){
             System.out.println(-1);
         }
+        sc.close();
     }
 }

@@ -33,5 +33,6 @@ public class searchrotated {
             }
         }
         System.out.println(res);
+        sc.close();
     }
 }

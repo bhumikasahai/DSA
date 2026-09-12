@@ -21,5 +21,6 @@ public class lowerbound {
             }
         }
         System.out.println(res);
+        sc.close();
     }
 }

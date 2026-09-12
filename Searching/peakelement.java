@@ -1,5 +1,5 @@
 import java.util.*;
-public class lastoccurrence {
+public class peakelement {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -7,22 +7,16 @@ public class lastoccurrence {
         for(int i=0;i<n;i++){
             arr[i] = sc.nextInt();
         }
-        int target = sc.nextInt();
         int low = 0;
         int high = n-1;
-        int ans = -1;
-        while(low<=high){
+        while(low<high){
             int mid = low + (high-low)/2;
-            if(arr[mid]==target){
-                ans = mid;
-                low = mid+1;
-            }else if(arr[mid]>target){
-                high = mid-1;
+            if(arr[mid]<arr[mid+1]){
+                low = mid + 1;
             }else{
-                low = mid+1;
+                high = mid;
             }
         }
-        System.out.println(ans);
-        sc.close();
+        System.out.println(low);
     }
 }

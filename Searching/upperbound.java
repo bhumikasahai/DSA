@@ -20,5 +20,6 @@ public class upperbound {
             }
         }
         System.out.println(res);
+        sc.close();
     }
 }

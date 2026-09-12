@@ -19,5 +19,6 @@ public class linearsearch {
         if(!found) {
             System.out.println(-1);
         }
+        sc.close();
     }
 }
