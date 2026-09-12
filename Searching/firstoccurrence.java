@@ -23,5 +23,6 @@ public class firstoccurrence {
             }
         }
         System.out.println(ans);
+        sc.close();
     }
 }
